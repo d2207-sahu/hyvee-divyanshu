@@ -1,10 +1,8 @@
-interface Headers {
-    [key: string]: string;
-}
-
-const headers: Headers = {
+const headers: {
+    "Content-Type"?: string, 'Access-Control-Allow-Methods': string
+} = {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
 };
 
 /**
@@ -32,7 +30,7 @@ async function apiService(requestType: string, url: string, body: any | {}) {
         headers,
         mode: 'cors'
     };
-    const baseUrl: string = process.env.NEXT_BASE_API_URL ?? "https://api.";
+    const baseUrl: string = process.env.NEXT_BASE_CLIENT_URL ?? "http://localhost:3000/api/profile?name=";
 
 
     if (body && requestType !== 'GET') {
@@ -45,28 +43,9 @@ async function apiService(requestType: string, url: string, body: any | {}) {
         const responseData = await response.json();
         return responseData;
     } else {
-        let errorData = await response.json();
-        if (typeof errorData === 'object') {
-            if (errorData.error) errorData = errorData.error;
-            if (errorData.message) errorData = errorData.message;
-        } else {
-            errorData = "Internal Server Error";
-        }
-        throw errorData;
+        const errorData = await response.json();
+        throw errorData.message;
     }
 }
 
-/**
- * @function
- * @param {string} url - The URL on which error occurred.
- * @param {object} error - The error response received from the server.
- * @param {function} errorCallback - Callback fxn to handle failed API requests.
- * @description
- *   This function is responsible for handling errors
- */
-const errorHandler = (error: any, errorCallback: Function, url?: string,) => {
-    let errorMessage = error.message || error;
-    return errorCallback(errorMessage);
-};
-
-export { apiService, errorHandler }
+export { apiService }
