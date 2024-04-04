@@ -9,39 +9,41 @@ export async function GET(request: NextApiRequest) {
         if (nameKeyword) {
             let personData: PersonData = { name: nameKeyword };
             personData.name = nameKeyword;
-            await ageHandler(personData);
-            await genderHandler(personData);
-            await nationHandler(personData);
             //  TODO uncomment if you have exceed your IP address, api limit. 
-            // personData = {
-            //     "name": "meelad",
-            //     "age": 34,
-            //     "gender": "male",
-            //     "genderProbability": 0.99,
-            //     "nation": "BH",
-            //     "nationProbability": [
-            //         {
-            //             "country_id": "BH",
-            //             "probability": 0.17600587426521203
-            //         },
-            //         {
-            //             "country_id": "BD",
-            //             "probability": 0.155486759544664
-            //         },
-            //         {
-            //             "country_id": "AE",
-            //             "probability": 0.09259303743271151
-            //         },
-            //         {
-            //             "country_id": "LY",
-            //             "probability": 0.08800293713260601
-            //         },
-            //         {
-            //             "country_id": "IQ",
-            //             "probability": 0.08800293713260601
-            //         }
-            //     ]
-            // };
+            // comment these 3 lines
+            // await ageHandler(personData);
+            // await genderHandler(personData);
+            // await nationHandler(personData);
+            // uncomment the dummmy JSON Data            
+            personData = {
+                "name": "meelad",
+                "age": 34,
+                "gender": "male",
+                "genderProbability": 0.99,
+                "nation": "BH",
+                "nationProbability": [
+                    {
+                        "country_id": "BH",
+                        "probability": 0.17600587426521203
+                    },
+                    {
+                        "country_id": "BD",
+                        "probability": 0.155486759544664
+                    },
+                    {
+                        "country_id": "AE",
+                        "probability": 0.09259303743271151
+                    },
+                    {
+                        "country_id": "LY",
+                        "probability": 0.08800293713260601
+                    },
+                    {
+                        "country_id": "IQ",
+                        "probability": 0.08800293713260601
+                    }
+                ]
+            };
             return Response.
                 json(personData, { status: 201, headers: { 'Content-type': 'application/json' } });
         } else {
