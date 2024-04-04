@@ -10,7 +10,8 @@ This Next.js project leverages the Next.js API routes feature to reduce the numb
 
 -   Reduces API calls by combining multiple endpoints into a single API call.
 -   Improved performance and reduced network overhead.
--
+-   Implmented two pages in nextjs.
+-   Handling the state between pages using URL Search Params
 
 ## Getting Started
 
