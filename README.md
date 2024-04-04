@@ -1,6 +1,11 @@
-# Project Name
+# Hyvee-Divyanshu
 
 Unlock Identity Insights: Discover Age, Gender, and Nationality with Just a Name.
+
+## screenshots
+![image](https://github.com/d2207-sahu/hyvee-divyanshu/assets/55633712/efbedaf2-b721-4b6c-96be-e7c9b44f4e96)
+![image](https://github.com/d2207-sahu/hyvee-divyanshu/assets/55633712/b6c896ad-0bca-4024-874d-016fb3b09c66)
+
 
 ## Description
 
