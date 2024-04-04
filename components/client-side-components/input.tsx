@@ -18,7 +18,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, ChildProps> = (props: Ch
                     props.setErrorState("");
                 }}
                 onKeyDown={(e) => {
-                    if (e.code === "Enter" || e.code === "Numpad Enter") {
+                    if (e.code === "Enter" || e.code === "NumpadEnter") {
                         props.callback();
                     }
                 }}
