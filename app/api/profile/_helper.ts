@@ -9,7 +9,6 @@ const ageHandler = async (personData: PersonData) => {
                 process.env.NEXT_API_BASE_AGE_URL + personData.name,
                 {});
             personData.age = personAgeData.age;
-            console.log(personAgeData)
         }
     } catch (error) {
         console.error(error);
@@ -26,7 +25,6 @@ const genderHandler = async (personData: PersonData) => {
                 {});
             personData.gender = personGenderData.gender;
             personData.genderProbability = personGenderData.probability;
-            console.log(personData)
         }
     } catch (error) {
         throw error
@@ -40,7 +38,6 @@ const nationHandler = async (personData: PersonData) => {
                 'GET',
                 process.env.NEXT_API_BASE_NATION_URL + personData.name,
                 {});
-            console.log(personData)
             if (personNationData && personNationData.country) {
                 personData.nation = _findNationWithHighestProbability(personNationData.country);
                 personData.nationProbability = personNationData.country;

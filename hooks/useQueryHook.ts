@@ -9,14 +9,12 @@ const useProfile = ({ name }: { name: string }) => {
 
     useEffect(() => {
         const getData = async () => {
-            console.log(name)
 
             try {
                 let responseData = await profileService.getProfile(name);
                 setData(responseData);
                 setIsLoading(false);
             } catch (err) {
-                console.log(err)
                 setError(`${err}`);
                 setIsLoading(false);
             }

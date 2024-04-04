@@ -7,7 +7,6 @@ class ProfileService {
    * @returns
    */
     async getProfile(name: string) {
-        console.log(name)
         let personData: PersonData = await apiService(
             'GET',
             name,
