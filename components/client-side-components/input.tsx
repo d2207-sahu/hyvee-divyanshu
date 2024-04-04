@@ -10,7 +10,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, ChildProps> = (props: Ch
         <div className="relative">
             <input
                 ref={nameRef}
-                className=" bg-gray-800 border border-green-500 rounded-md p-4  text-white focus:border-green-500 focus:outline-none focus:ring-2 h-16 focus:ring-green-500"
+                className=" bg-gray-800 border border-green-500 font-semibold font-roboto rounded-md p-4  text-white focus:border-green-500 focus:outline-none focus:ring-2 h-16 focus:ring-green-500"
                 type="text"
                 placeholder="Enter Name..."
                 onKeyDown={(e) => {

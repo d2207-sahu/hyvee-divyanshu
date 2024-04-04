@@ -29,7 +29,7 @@ const NameComponent = () => {
     return (
         <div className="flex flex-col justify-center align-middle h-screen items-center">
             <BackButton />
-            <h1 className={`text-2xl font-semibold ${!isMale ? "text-pink-500" : "text-blue-500"} mb-5`}>{data?.name}</h1>
+            <h1 className={`text-2xl font-semibold font-roboto font-mono text-green-500 mb-5`}>{data?.name}</h1>
             <div className="flex flex-row justify-center items-center">
                 <div className={`flex rounded-lg items-center ${!isMale ? "border-pink-500" : "border-blue-500"} border-4 border-solidshadow-lg p-6`}>
                     <div className={`flex items-center justify-center ${!data?.gender?.trim().includes("male") ? "bg-pink-500" : "bg-blue-500"} rounded-full w-24 h-24`}>
